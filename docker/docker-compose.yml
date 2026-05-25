@@ -1,0 +1,16 @@
+
+services:
+  todo_db:
+    image: postgres:16-alpine
+    container_name: todo_db
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_USER: creativity
+      POSTGRES_PASSWORD: creativity
+      POSTGRES_DB: todoapp
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
